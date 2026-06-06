@@ -402,6 +402,101 @@
             text-decoration: none;
         }
 
+        /* Aquatic Life Animation Section */
+        .aquatic-animation {
+            position: relative;
+            height: 400px;
+            background: linear-gradient(180deg, #0a2e4a 0%, #1a5a7f 50%, #0d3b66 100%);
+            overflow: hidden;
+            margin-top: 60px;
+            border-top: 3px solid #2e8bc0;
+            border-bottom: 3px solid #2e8bc0;
+        }
+
+        .aquatic-animation h2 {
+            position: relative;
+            z-index: 5;
+            color: white;
+            text-align: center;
+            padding-top: 20px;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .aquatic-background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0.3;
+        }
+
+        .bubble {
+            position: absolute;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.1));
+            border-radius: 50%;
+            animation: bubbleRise linear infinite;
+        }
+
+        @keyframes bubbleRise {
+            0% {
+                bottom: -50px;
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100%;
+                opacity: 0;
+            }
+        }
+
+        /* Fish swimming animations */
+        .aquatic-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .creature {
+            position: absolute;
+            font-size: 40px;
+            animation: swim linear infinite;
+        }
+
+        .fish-left {
+            animation: swimLeft linear infinite;
+        }
+
+        .fish-right {
+            animation: swimRight linear infinite;
+        }
+
+        @keyframes swimRight {
+            0% {
+                left: -60px;
+                transform: scaleX(1);
+            }
+            100% {
+                left: 100%;
+                transform: scaleX(1);
+            }
+        }
+
+        @keyframes swimLeft {
+            0% {
+                right: -60px;
+                transform: scaleX(-1);
+            }
+            100% {
+                right: 100%;
+                transform: scaleX(-1);
+            }
+        }
+
         footer {
             background: #1a4d7a;
             color: white;
@@ -452,6 +547,14 @@
 
             section h2 {
                 font-size: 1.8em;
+            }
+
+            .aquatic-animation {
+                height: 300px;
+            }
+
+            .creature {
+                font-size: 30px;
             }
 
             nav ul {
@@ -746,6 +849,12 @@
             </div>
         </section>
 
+        <!-- Aquatic Life Animation Section -->
+        <section class="aquatic-animation">
+            <h2>🐠 Protecting Aquatic Life in Our Waters 🦑</h2>
+            <div class="aquatic-container" id="aquaticContainer"></div>
+        </section>
+
         <section id="action" class="container">
             <h2>Take Action Today</h2>
             <p class="intro-text">Every action counts in preserving underground water for future generations. Join the movement to protect our planet's most precious resource.</p>
@@ -792,8 +901,55 @@
             }
         }
 
-        // Initialize waterfall drops when page loads
-        window.addEventListener('load', createWaterfallDrops);
+        // Create aquatic life animation
+        function createAquaticLife() {
+            const container = document.getElementById('aquaticContainer');
+            const creatures = ['🐠', '🐟', '🦑', '🐙', '🦐', '🦈', '🐡', '🦀'];
+            const numberOfCreatures = 12;
+
+            for (let i = 0; i < numberOfCreatures; i++) {
+                const creature = document.createElement('div');
+                creature.className = 'creature';
+                creature.textContent = creatures[Math.floor(Math.random() * creatures.length)];
+                
+                const randomTop = Math.random() * 70 + 15; // Position in viewport
+                const randomDuration = 6 + Math.random() * 8; // 6-14 seconds
+                const randomDelay = Math.random() * 5; // 0-5 seconds delay
+                const direction = Math.random() > 0.5 ? 'fish-left' : 'fish-right';
+
+                creature.classList.add(direction);
+                creature.style.top = randomTop + '%';
+                creature.style.animationDuration = randomDuration + 's';
+                creature.style.animationDelay = randomDelay + 's';
+
+                container.appendChild(creature);
+            }
+
+            // Create bubbles
+            for (let i = 0; i < 20; i++) {
+                const bubble = document.createElement('div');
+                bubble.className = 'bubble';
+                
+                const size = 5 + Math.random() * 15;
+                const randomLeft = Math.random() * 100;
+                const duration = 4 + Math.random() * 6;
+                const delay = Math.random() * 5;
+
+                bubble.style.width = size + 'px';
+                bubble.style.height = size + 'px';
+                bubble.style.left = randomLeft + '%';
+                bubble.style.animationDuration = duration + 's';
+                bubble.style.animationDelay = delay + 's';
+
+                container.appendChild(bubble);
+            }
+        }
+
+        // Initialize animations when page loads
+        window.addEventListener('load', function() {
+            createWaterfallDrops();
+            createAquaticLife();
+        });
 
         // Smooth scroll for navigation links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
