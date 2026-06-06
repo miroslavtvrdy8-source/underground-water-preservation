@@ -18,6 +18,25 @@
             color: #333;
         }
 
+        /* Educational Disclaimer Banner */
+        .disclaimer-banner {
+            background: linear-gradient(135deg, #fff3cd 0%, #ffeaa7 100%);
+            border-bottom: 3px solid #ffc107;
+            padding: 20px;
+            text-align: center;
+            color: #856404;
+        }
+
+        .disclaimer-banner h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        .disclaimer-banner p {
+            font-size: 0.95em;
+            margin: 5px 0;
+        }
+
         /* Waterfall Animation Section */
         .waterfall-hero {
             position: relative;
@@ -497,6 +516,47 @@
             }
         }
 
+        /* Sources Section */
+        .sources-section {
+            background: #f8f9fa;
+            padding: 40px 0;
+            border-top: 2px solid #2e8bc0;
+        }
+
+        .sources-section h2 {
+            color: #1e5a96;
+            margin-bottom: 30px;
+        }
+
+        .sources-list {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            border-left: 5px solid #2e8bc0;
+        }
+
+        .sources-list ol {
+            list-style-position: inside;
+            padding-left: 20px;
+        }
+
+        .sources-list li {
+            margin: 15px 0;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        .sources-list a {
+            color: #2e8bc0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .sources-list a:hover {
+            text-decoration: underline;
+            color: #1e5a96;
+        }
+
         footer {
             background: #1a4d7a;
             color: white;
@@ -564,10 +624,29 @@
             nav ul li a {
                 text-align: center;
             }
+
+            .disclaimer-banner {
+                padding: 15px;
+            }
+
+            .disclaimer-banner h3 {
+                font-size: 1em;
+            }
+
+            .disclaimer-banner p {
+                font-size: 0.85em;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Educational Disclaimer Banner -->
+    <div class="disclaimer-banner">
+        <h3>📚 Educational Website - Awareness Initiative</h3>
+        <p><strong>Purpose:</strong> This is an educational website designed to spread awareness about water pollution and groundwater preservation.</p>
+        <p><strong>Disclaimer:</strong> This website is NOT a professional scientific resource. The information provided is for educational purposes only. For professional advice, consult official environmental organizations and scientific institutions.</p>
+    </div>
+
     <!-- Waterfall Hero Section with Animation -->
     <section class="waterfall-hero">
         <div class="waterfall-container"></div>
@@ -586,6 +665,7 @@
             <li><a href="#threats">Threats</a></li>
             <li><a href="#solutions">Solutions</a></li>
             <li><a href="#organizations">Organizations</a></li>
+            <li><a href="#sources">Sources</a></li>
             <li><a href="#action">Take Action</a></li>
         </ul>
     </nav>
@@ -855,6 +935,42 @@
             <div class="aquatic-container" id="aquaticContainer"></div>
         </section>
 
+        <!-- Sources Section -->
+        <section id="sources" class="sources-section">
+            <div class="container">
+                <h2>📚 Sources & References</h2>
+                <p class="intro-text">This website is for educational purposes and aims to raise awareness about water pollution. The following sources have informed our content:</p>
+
+                <div class="sources-list">
+                    <ol>
+                        <li><strong>USGS - Groundwater</strong> - <a href="https://www.usgs.gov/faqs/what-groundwater" target="_blank">https://www.usgs.gov/faqs/what-groundwater</a> - Information about aquifer systems and groundwater basics.</li>
+
+                        <li><strong>UNESCO - Water Security</strong> - <a href="https://en.unesco.org/themes/water-security" target="_blank">https://en.unesco.org/themes/water-security</a> - Global water resource management and statistics.</li>
+
+                        <li><strong>World Bank - Water Resources</strong> - <a href="https://www.worldbank.org/en/topic/water" target="_blank">https://www.worldbank.org/en/topic/water</a> - Information on water sustainability and development.</li>
+
+                        <li><strong>UN-IGRAC - International Groundwater Resources Assessment Centre</strong> - <a href="https://www.un-igrac.org/" target="_blank">https://www.un-igrac.org/</a> - Groundwater assessment and contamination information.</li>
+
+                        <li><strong>EPA - Groundwater Protection</strong> - <a href="https://www.epa.gov/groundwater-groundwater-protection-and-restoration" target="_blank">https://www.epa.gov/groundwater</a> - Groundwater contamination and protection strategies.</li>
+
+                        <li><strong>Nature.org - Freshwater Conservation</strong> - <a href="https://www.nature.org/en-us/what-we-do/our-priorities/provide-food-and-water-sustainably/water/" target="_blank">https://www.nature.org/water</a> - Freshwater ecosystem protection and conservation.</li>
+
+                        <li><strong>World Water Council</strong> - <a href="https://www.worldwatercouncil.org/" target="_blank">https://www.worldwatercouncil.org/</a> - Global water resource management and policy.</li>
+
+                        <li><strong>Global Water Partnership</strong> - <a href="https://www.gwp.org/" target="_blank">https://www.gwp.org/</a> - Integrated water resource management information.</li>
+
+                        <li><strong>International Water Association - IWA Publishing</strong> - <a href="https://www.iwapublishing.com/" target="_blank">https://www.iwapublishing.com/</a> - Scientific publications on water management and pollution.</li>
+
+                        <li><strong>Ramsar Convention - Wetlands Protection</strong> - <a href="https://www.ramsar.org/" target="_blank">https://www.ramsar.org/</a> - Information on wetland and freshwater ecosystem conservation.</li>
+                    </ol>
+                </div>
+
+                <p style="margin-top: 30px; padding: 20px; background: #e8f4f8; border-radius: 5px; color: #333;">
+                    <strong>Note:</strong> This website is created for educational and awareness purposes only. While we strive to provide accurate information based on reputable sources, we recommend consulting official government agencies, scientific institutions, and professional organizations for technical or policy-related matters. The statistics and information presented here are intended to raise awareness about water pollution issues globally.
+                </p>
+            </div>
+        </section>
+
         <section id="action" class="container">
             <h2>Take Action Today</h2>
             <p class="intro-text">Every action counts in preserving underground water for future generations. Join the movement to protect our planet's most precious resource.</p>
@@ -880,8 +996,8 @@
     </main>
 
     <footer>
-        <p>&copy; 2026 Underground Water Preservation Initiative. All rights reserved.</p>
-        <p>Together, we can ensure clean, sustainable groundwater for generations to come.</p>
+        <p>&copy; 2026 Underground Water Preservation Educational Initiative. All rights reserved.</p>
+        <p>This is an educational website created to raise awareness about water pollution and groundwater preservation.</p>
         <p><strong>Save Water. Save Life. Save the Planet.</strong></p>
     </footer>
 
@@ -912,9 +1028,9 @@
                 creature.className = 'creature';
                 creature.textContent = creatures[Math.floor(Math.random() * creatures.length)];
                 
-                const randomTop = Math.random() * 70 + 15; // Position in viewport
-                const randomDuration = 6 + Math.random() * 8; // 6-14 seconds
-                const randomDelay = Math.random() * 5; // 0-5 seconds delay
+                const randomTop = Math.random() * 70 + 15;
+                const randomDuration = 6 + Math.random() * 8;
+                const randomDelay = Math.random() * 5;
                 const direction = Math.random() > 0.5 ? 'fish-left' : 'fish-right';
 
                 creature.classList.add(direction);
@@ -925,7 +1041,6 @@
                 container.appendChild(creature);
             }
 
-            // Create bubbles
             for (let i = 0; i < 20; i++) {
                 const bubble = document.createElement('div');
                 bubble.className = 'bubble';
